@@ -9,8 +9,6 @@ row-gap: https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap
 */
 .container {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
   border: 1px solid green;
   row-gap: 0.25rem;
   padding: 0.25rem;
@@ -22,12 +20,57 @@ row-gap: https://developer.mozilla.org/en-US/docs/Web/CSS/row-gap
   text-align: center;
 }
 
-.a,
-.c {
-  height: 10vh;
+
+
+@media (max-width: 500px) {
+  body {
+    background: lightblue;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .a,
+  .c {
+    height: 10vh;
+  }
+
+  .b {
+    height: 20vh;
+    vertical-align: middle;
+  }
 }
 
-.b {
-  height: 20vh;
-  vertical-align: middle;
+@media (min-width: 501px) {
+  body {
+    background-color: aquamarine;
+  }
+
+  .container {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 500px;
+    column-gap: 0.25rem;
+  }
+
+  .a {
+    flex-grow: 3;
+    width: 500px;
+    height: 10vh;
+  }
+
+  .b {
+    flex-grow: 2;
+  }
+
+  .c {
+    flex-grow: 1;
+  }
+
+  .b,
+  .c {
+    height: 20vh;
+  }
 }
